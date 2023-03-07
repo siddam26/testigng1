@@ -1,0 +1,24 @@
+<template>
+    <h1>
+        <lightning-card title="FILTERS">
+            <lightning-input type="toggle" label="ON/OFF" onclick={toggleclick}>
+
+            </lightning-input>
+            <template if:true={istoggle}>
+            
+            <lightning-layout multiple-rows>
+                <lightning-layout-item brand="10" padding="around-small" if:true={brandsPicklistValues.data}>
+                    <lightning-combobox name="Brand" label="Brand" value={Brand} placeholder="Select Brand"
+                        options={brandsPicklistValues.data.values} onchange={handleChange}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item  padding="around-small" if:true={sizesPicklistValues.data}>
+                    <lightning-combobox name="size" label="Size" value={size} placeholder="Select Size"
+                        options={sizesPicklistValues.data.values} onchange={handleChange}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+            </lightning-layout>
+            </template>
+        </lightning-card>
+    </h1>
+</template>
